@@ -36,26 +36,25 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-            <motion.div
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="flex items-center h-16 w-full md:justify-between">
+          <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center space-x-2"
-            >
+            className="flex items-center min-w-0 flex-1"
+          >
             <img 
               src={Logo}
-              // type="image/svg+xml"
               alt="Logo" 
-              className="h-8 w-8 rounded-full"
+              className="h-8 w-8 rounded-full flex-shrink-0"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+            <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent truncate min-w-0 max-w-[120px] sm:max-w-none">
               Siddharth Solanki
             </span>
-            </motion.div>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 flex-shrink-0">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
@@ -79,7 +78,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="flex md:hidden items-center space-x-2 flex-shrink-0 ml-2">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -104,9 +103,9 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-16 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-lg rounded-b-lg"
+            className="md:hidden absolute top-16 right-0 left-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-lg rounded-b-lg w-full max-w-full z-40"
           >
-            <div className="px-4 py-4 space-y-2">
+            <div className="px-4 py-4 space-y-2 w-full max-w-full">
               {navItems.map((item) => (
                 <motion.a
                   key={item.name}

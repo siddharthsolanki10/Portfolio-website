@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Filter, Star, Calendar } from 'lucide-react';
+import { ExternalLink, Github, Star, Calendar } from 'lucide-react';
 
 const Projects = () => {
   const [ref, inView] = useInView({

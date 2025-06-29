@@ -1,0 +1,7 @@
+# Disallow entire site (not recommended unless it's private)
+User-agent: *
+Disallow: /
+
+# OR to disallow only index.html (not usually needed)
+User-agent: *
+Disallow: /index.html

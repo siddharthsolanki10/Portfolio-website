@@ -151,33 +151,33 @@ const Experience = () => {
                     <div className={`absolute left-6 w-4 h-4 bg-white dark:bg-gray-900 border-4 border-current rounded-full bg-gradient-to-r ${exp.color}`}></div>
 
                     {/* Content */}
-                    <div className="ml-20">
+                    <div className="ml-6 sm:ml-20">
                       <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="flex items-center gap-3">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 justify-between mb-4 min-w-0 w-full">
+                          <div className="flex items-center gap-3 min-w-0 w-full">
                             <div className={`bg-gradient-to-r ${exp.color} p-3 rounded-lg`}>
                               <exp.icon className="w-6 h-6 text-white" />
                             </div>
-                            <div>
-                              <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                            <div className="min-w-0 w-full">
+                              <h3 className="text-xl font-bold text-gray-900 dark:text-white truncate break-words w-full">
                                 {exp.position}
                               </h3>
-                              <p className="text-blue-600 dark:text-blue-400 font-medium">
+                              <p className="text-blue-600 dark:text-blue-400 font-medium truncate break-words w-full">
                                 {exp.institution}
                               </p>
-                              <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 text-sm mt-1">
-                                <div className="flex items-center gap-1">
+                              <div className="flex flex-wrap items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mt-1 min-w-0 w-full">
+                                <div className="flex items-center gap-1 min-w-0">
                                   <Calendar size={14} />
-                                  <span>{exp.period}</span>
+                                  <span className="truncate max-w-[100px] sm:max-w-none">{exp.period}</span>
                                 </div>
-                                <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-1 min-w-0">
                                   <MapPin size={14} />
-                                  <span>{exp.location}</span>
+                                  <span className="truncate max-w-[120px] sm:max-w-none">{exp.location}</span>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          <span className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap shrink-0 mt-2 sm:mt-0 ${
                             exp.status === 'Current' 
                               ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
                               : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
