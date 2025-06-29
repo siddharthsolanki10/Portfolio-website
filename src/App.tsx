@@ -10,10 +10,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackgroundElements from './components/BackgroundElements';
 import { ThemeProvider } from './contexts/ThemeContext';
+import SEO from './components/SEO';
 
 function App() {
   return (
     <ThemeProvider>
+      <SEO />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 transition-all duration-500">
         <BackgroundElements />
         <Navbar />
