@@ -55,7 +55,7 @@ const Footer = () => {
                 <div className="text-gray-400 text-sm">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400">3+</div>
+                <div className="text-2xl font-bold text-purple-400">2+</div>
                 <div className="text-gray-400 text-sm">Years Learning</div>
               </div>
               <div className="text-center">
