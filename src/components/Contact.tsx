@@ -54,7 +54,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Location',
       value: 'Ahmedabad, Gujarat',
-      href: '#',
+      href: 'https://maps.app.goo.gl/h7JjRizUeW45nyBd9',
       color: 'from-purple-500 to-pink-500',
     },
   ];

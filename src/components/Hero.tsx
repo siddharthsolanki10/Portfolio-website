@@ -20,7 +20,7 @@ const Hero = () => {
     { icon: Twitter, href: 'https://x.com/Sid4Art2141', label: 'Twitter', color: 'hover:text-sky-500' },
   ];
 
-  const skills = ['React.js', 'JavaScript', 'UI/UX Design', 'Tailwind CSS', 'Frontend Development'];
+  const skills = ['React.js', 'JavaScript', 'UI/UX Designer', 'Tailwind CSS', 'Frontend Development'];
   const [currentSkill, setCurrentSkill] = useState(0);
 
   useEffect(() => {
@@ -133,7 +133,7 @@ const Hero = () => {
             </motion.a>
             
             <motion.a
-              href="./SiddharthSolanki-Resume.pdf"
+              href="https://drive.usercontent.google.com/download?id=1neHDEfwsPiI9NUaMD8rtuiMlrTh39yk2&export=download&authuser=0&confirm=t&uuid=4bb13627-2802-47c8-b0fb-1fde3438599f&at=AN8xHooEsIPtaA9nURIClMx-xU6I:1751349300873"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
