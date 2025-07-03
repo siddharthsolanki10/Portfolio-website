@@ -140,7 +140,7 @@ const Hero = () => {
             </motion.a>
             
             <motion.a
-              href="https://drive.usercontent.google.com/download?id=1neHDEfwsPiI9NUaMD8rtuiMlrTh39yk2&export=download&authuser=0&confirm=t&uuid=4bb13627-2802-47c8-b0fb-1fde3438599f&at=AN8xHooEsIPtaA9nURIClMx-xU6I:1751349300873"
+              href="https://drive.usercontent.google.com/download?id=1xoCmVZlAfLuIoXWqSLHU-2LetHrsyLY_&export=download&authuser=0&confirm=t&uuid=28056232-e28b-4131-98d0-cebf34b320ad&at=AN8xHooxbvqRRFCiPr6EVAIHI-5s:1751550960746"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
