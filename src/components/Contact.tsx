@@ -316,7 +316,7 @@ const Contact = () => {
               <span className="text-green-700 dark:text-green-300 font-semibold">Currently Available</span>
             </div>
             <p className="text-green-600 dark:text-green-400">
-              Open for frontend development projects, internships, and collaborations
+              Open for frontend and full stack development projects, internships, and collaborations
             </p>
           </div>
         </motion.div>

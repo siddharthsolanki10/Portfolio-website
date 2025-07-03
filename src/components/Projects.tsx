@@ -111,6 +111,20 @@ const Projects = () => {
       status: '-',
       complexity: 'Intermediate'
     },
+    {
+      id: 7,
+      title: 'YouTube Clone (In Progress)',
+      description: 'A full-stack YouTube clone featuring video upload, watch history, subscriptions, and user profiles. Built with a modern MERN stack and Tailwind CSS for a seamless, responsive experience.',
+      image: 'https://images.pexels.com/photos/373945/pexels-photo-373945.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Full Stack',
+      tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      github: '#',
+      demo: '#',
+      featured: false,
+      year: '2025',
+      status: 'In Progress',
+      complexity: 'Advanced'
+    },
   ];
 
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);

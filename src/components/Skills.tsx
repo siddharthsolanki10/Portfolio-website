@@ -10,29 +10,40 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: 'Languages',
-      skills: [
-        { name: 'HTML', level: 95, color: 'from-orange-500 to-red-500' },
-        { name: 'CSS', level: 90, color: 'from-blue-500 to-cyan-500' },
-        { name: 'JavaScript', level: 88, color: 'from-yellow-400 to-yellow-600' },
-      ],
-    },
-    {
       title: 'Frameworks & Libraries',
       skills: [
-        { name: 'React.js', level: 85, color: 'from-cyan-400 to-blue-500' },
+        { name: 'React.js', level: 88, color: 'from-cyan-400 to-blue-500' },
+        { name: 'Redux', level: 85, color: 'from-purple-500 to-indigo-600' },
         { name: 'Tailwind CSS', level: 92, color: 'from-teal-400 to-cyan-600' },
-        { name: 'Redux', level: 80, color: 'from-purple-500 to-indigo-600' },
-        { name: 'React Router', level: 82, color: 'from-pink-500 to-red-500' },
+        { name: 'Bootstrap', level: 80, color: 'from-pink-500 to-red-500' },
       ],
     },
     {
-      title: 'Tools & Others',
+      title: 'Basics',
+      skills: [
+        { name: 'HTML', level: 95, color: 'from-orange-500 to-red-500' },
+        { name: 'CSS', level: 92, color: 'from-blue-500 to-cyan-500' },
+        { name: 'JavaScript', level: 90, color: 'from-yellow-400 to-yellow-600' },
+      ],
+    },
+    {
+      title: 'Backend & Database',
+      skills: [
+        { name: 'Node.js (Basic)', level: 70, color: 'from-green-500 to-emerald-600' },
+        { name: 'Express.js', level: 68, color: 'from-gray-700 to-gray-900' },
+        { name: 'MongoDB', level: 75, color: 'from-green-400 to-green-700' },
+        { name: 'Appwrite', level: 65, color: 'from-blue-400 to-blue-700' },
+      ],
+    },
+    {
+      title: 'Tools & Design',
       skills: [
         { name: 'Git & GitHub', level: 85, color: 'from-gray-700 to-gray-900' },
-        { name: 'Figma', level: 80, color: 'from-purple-400 to-pink-500' },
-        { name: 'Node.js (Basics)', level: 70, color: 'from-green-500 to-emerald-600' },
-        { name: 'MS Office', level: 88, color: 'from-blue-600 to-indigo-700' },
+        { name: 'Postman', level: 80, color: 'from-orange-400 to-yellow-500' },
+        { name: 'Figma', level: 82, color: 'from-purple-400 to-pink-500' },
+        { name: 'Framer Motion', level: 78, color: 'from-pink-400 to-purple-600' },
+        { name: 'UI/UX Design', level: 85, color: 'from-blue-400 to-purple-500' },
+        { name: 'Prototyping (Figma)', level: 80, color: 'from-pink-400 to-blue-400' },
       ],
     },
   ];
@@ -73,7 +84,7 @@ const Skills = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Frontend technologies and tools I use to bring ideas to life
+             MERN stack technologies and modern tools I use to build seamless, scalable, and engaging web experiences.
           </p>
         </motion.div>
 

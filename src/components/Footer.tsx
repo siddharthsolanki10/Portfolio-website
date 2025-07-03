@@ -18,10 +18,10 @@ const Footer = () => {
   ];
 
   const projects = [
+    { name: 'Kidolio', href: 'https://kidolio.vercel.app' },
     { name: 'Appwrite Blog Platform', href: 'https://github.com/mrsiddharthsolanki/Appwrite_Blog' },
     { name: 'Twitter Clone', href: 'https://github.com/mrsiddharthsolanki/Tweeter-Cone' },
     { name: 'SwiftCart E-Commerce', href: 'https://github.com/mrsiddharthsolanki/ShiftCart-ecommerce' },
-    { name: 'Book Management System', href: 'https://github.com/mrsiddharthsolanki/Book-MangeMent-System-' },
   ];
 
   return (
@@ -43,9 +43,7 @@ const Footer = () => {
               Siddharth Solanki
             </h3>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
-              Aspiring Frontend Developer and B.Tech student passionate about creating beautiful, 
-              responsive web applications with React.js and modern technologies. 
-              Ready for new opportunities and collaborations.
+              Frontend-focused MERN Stack Developer and B.Tech Computer Engineering student. I love crafting modern, user-centric web applications with React.js, Tailwind CSS, and a strong eye for UI/UX. Always eager to learn, collaborate, and turn ideas into engaging digital experiences. Let’s connect and build something great together!
             </p>
             
             {/* Quick Stats */}

@@ -12,26 +12,26 @@ const About = () => {
   const features = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable React applications following modern development practices.',
+      title: 'Frontend Specialist',
+      description: 'Building interactive, scalable React.js applications with a focus on clean code and maintainability.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Creating beautiful, responsive interfaces with Figma and Tailwind CSS.',
+      title: 'UI/UX & Design',
+      description: 'Designing beautiful, user-centric interfaces using Figma and Tailwind CSS for seamless experiences.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Target,
-      title: 'Project-Driven',
-      description: 'Over 20 practical projects including e-commerce, blogs, and web applications.',
+      title: 'Project-Based Learning',
+      description: '20+ hands-on projects including full-stack apps, e-commerce, and real-world UI clones.',
       color: 'from-green-500 to-teal-500',
     },
     {
       icon: Zap,
-      title: 'Modern Tech',
-      description: 'Specializing in React.js, Redux, and contemporary frontend technologies.',
+      title: 'Modern Stack',
+      description: 'React.js, Redux, Tailwind, and supporting backend with Node.js, Express, MongoDB, and Appwrite.',
       color: 'from-yellow-500 to-orange-500',
     },
   ];
@@ -64,13 +64,13 @@ const About = () => {
           </motion.div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Passionate Frontend
+            MERN Stack Developer
             <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-              Developer
+              with a Frontend Focus
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Aspiring Frontend Developer and B.Tech student focused on creating exceptional user experiences
+            I am a B.Tech Computer Engineering student at Silver Oak University with a passion for building modern, user-focused web applications. My strengths lie in frontend development—creating clean, responsive interfaces with React.js, Tailwind CSS, and Figma—while also supporting full-stack features with Node.js, Express, MongoDB, and Appwrite. I thrive on transforming ideas into engaging digital experiences through thoughtful design and robust code.
           </p>
         </motion.div>
 
@@ -85,13 +85,10 @@ const About = () => {
                 My Journey
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Currently pursuing B.Tech in Computer Engineering at Silver Oak University, Ahmedabad. 
-                I'm a self-motivated developer with a strong foundation in JavaScript, React.js, and modern UI/UX design principles.
+                Hi, I'm Siddharth Solanki, a frontend-focused MERN stack developer based in Ahmedabad. I thrive on building engaging user interfaces and practical web solutions. My journey is driven by curiosity, hands-on learning, and a passion for UI/UX.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                I've completed over 20 practical projects including blogging platforms, e-commerce websites, 
-                and various web applications. My expertise spans across React.js, Tailwind CSS, Redux, 
-                and I'm passionate about responsive React interfaces and modern development practices.
+                With 20+ projects, including a Twitter clone, blog platform, and Kidolio (BOLT Hackathon), I specialize in React.js, Tailwind CSS, and Figma. I also work with Node.js and MongoDB to support full-stack features. Always eager to learn, I enjoy collaborating and turning ideas into reality.
               </p>
               
               {/* Stats Grid */}
