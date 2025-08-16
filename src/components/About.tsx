@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code, Palette, Database, Zap, Award, Users, Coffee, Heart, BookOpen, Target } from 'lucide-react';
+import { Code, Palette, Database, Zap, Award, Users, Coffee, Heart, BookOpen, Target, Briefcase } from 'lucide-react';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -34,6 +34,12 @@ const About = () => {
       description: 'React.js, Redux, Tailwind, and supporting backend with Node.js, Express, MongoDB, and Appwrite.',
       color: 'from-yellow-500 to-orange-500',
     },
+    {
+      icon: Briefcase,
+      title: 'Node.js Developer Intern',
+      description: 'Completed a Node.js backend internship at Devstree IT Services, working on real-world APIs, databases, and collaborative projects.',
+      color: 'from-green-500 to-blue-500',
+    },
   ];
 
   const stats = [
@@ -50,8 +56,8 @@ const About = () => {
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16 will-change-transform"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -78,9 +84,10 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col justify-center h-full will-change-transform"
           >
-            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20">
+            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 h-full flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 My Journey
               </h3>
@@ -113,8 +120,8 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-6 flex flex-col justify-center h-full will-change-transform"
           >
             {features.map((feature, index) => (
               <motion.div

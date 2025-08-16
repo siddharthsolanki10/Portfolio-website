@@ -30,22 +30,21 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left justify-center">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 flex flex-col items-center justify-center"
           >
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4 text-center">
               Siddharth Solanki
             </h3>
-            <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-300 mb-6 max-w-md leading-relaxed text-center">
               Frontend-focused MERN Stack Developer and B.Tech Computer Engineering student. I love crafting modern, user-centric web applications with React.js, Tailwind CSS, and a strong eye for UI/UX. Always eager to learn, collaborate, and turn ideas into engaging digital experiences. Let’s connect and build something great together!
             </p>
-            
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               <div className="text-center">
@@ -61,8 +60,7 @@ const Footer = () => {
                 <div className="text-gray-400 text-sm">Passion</div>
               </div>
             </div>
-
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
@@ -146,17 +144,15 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-800 pt-8 mt-8"
         >
-          <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-6 rounded-lg border border-gray-700">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-              <div>
-                <h4 className="font-semibold text-white mb-2">Currently Studying</h4>
-                <p className="text-gray-300">B.Tech Computer Engineering at Silver Oak University, Ahmedabad</p>
-                <p className="text-gray-400 text-sm">2023 - Present</p>
-              </div>
-              <div className="flex items-center gap-2 text-green-400">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span className="text-sm font-medium">Available for Opportunities</span>
-              </div>
+          <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-6 rounded-lg border border-gray-700 flex flex-col items-center text-center md:flex-row md:justify-between md:items-center md:text-left gap-4">
+            <div>
+              <h4 className="font-semibold text-white mb-2">Currently Studying</h4>
+              <p className="text-gray-300">B.Tech Computer Engineering at Silver Oak University, Ahmedabad</p>
+              <p className="text-gray-400 text-sm">2023 - Present</p>
+            </div>
+            <div className="flex items-center gap-2 text-green-400">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              <span className="text-sm font-medium">Available for Opportunities</span>
             </div>
           </div>
         </motion.div>
@@ -169,7 +165,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-800 pt-8 mt-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center">
             <div className="flex items-center gap-2 text-gray-300 text-sm">
               <span>Built with</span>
               <Heart size={16} className="text-red-500 animate-pulse" />

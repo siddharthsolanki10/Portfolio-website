@@ -4,7 +4,6 @@ import { ExternalLink, Github, Star, Calendar, ChevronRight, Filter, Eye, Code, 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -235,8 +234,6 @@ const Projects = () => {
               <div
                 key={project.id}
                 className={`group relative transition-all duration-700 delay-${index * 100}`}
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/20 group-hover:border-blue-500/30 group-hover:-translate-y-2">
                   {/* Image Section */}
@@ -481,10 +478,6 @@ const Projects = () => {
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     <span>Updated Weekly</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-yellow-500" />
-                    <span>20+ Stars</span>
                   </div>
                 </div>
               </div>
