@@ -44,17 +44,10 @@ const Contact = () => {
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: Phone,
-      title: 'Phone',
-      value: '+91 9978203398',
-      href: 'tel:+919978203398',
-      color: 'from-green-500 to-teal-500',
-    },
-    {
       icon: MapPin,
       title: 'Location',
       value: 'Ahmedabad, Gujarat',
-      href: 'https://maps.app.goo.gl/h7JjRizUeW45nyBd9',
+      href: 'https://www.google.com/maps/place/Ahmedabad,+Gujarat',
       color: 'from-purple-500 to-pink-500',
     },
   ];
