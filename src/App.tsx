@@ -1,43 +1,81 @@
-import React, { Suspense, lazy } from 'react';
-import { motion } from 'framer-motion';
-import Navbar from './components/Navbar';
-const Hero = lazy(() => import('./components/Hero'));
-const About = lazy(() => import('./components/About'));
-const Skills = lazy(() => import('./components/Skills'));
-const Projects = lazy(() => import('./components/Projects'));
-const Experience = lazy(() => import('./components/Experience'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
-import BackgroundElements from './components/BackgroundElements';
-import { ThemeProvider } from './contexts/ThemeContext';
-import SEO from './components/SEO';
 
-function App() {
-  return (
-    <ThemeProvider>
-      <SEO />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 transition-all duration-300 will-change-transform overflow-x-hidden overflow-y-auto">
-        <BackgroundElements />
-        <Navbar />
-        <Suspense fallback={<div className="flex items-center justify-center min-h-screen text-xl text-gray-500 dark:text-gray-400">Loading...</div>}>
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative z-10 will-change-transform"
-          >
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Contact />
-            <Footer />
-          </motion.main>
-        </Suspense>
+import React, { useEffect, useRef, useState } from 'react';
+// Changed from named import to default import for gsap
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { IntroScene } from './components/IntroScene';
+import { CharacterStory } from './components/CharacterStory';
+import { Chronicles } from './components/Chronicles';
+import { SkillsInventory } from './components/SkillsInventory';
+import { ProjectMissions } from './components/ProjectMissions';
+import { SymbolicCinematic } from './components/SymbolicCinematic';
+import { LastRide } from './components/LastRide';
+import { CampfireFinal } from './components/CampfireFinal';
+import { AudioPlayer } from './components/AudioPlayer';
+import { ProductionGrounds } from './components/ProductionGrounds';
+import SEO from './SEO';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const App: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isStarted, setIsStarted] = useState(false);
+
+  useEffect(() => {
+    if (!isStarted) return;
+
+    // Refresh triggers after a short delay to ensure layout is settled
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, [isStarted]);
+
+  if (!isStarted) {
+    return (
+      <div className="h-screen w-screen flex flex-col items-center justify-center bg-[#0a0a0c] text-white p-8">
+        <h1 className="text-4xl md:text-6xl font-cinzel mb-8 tracking-[0.4em] text-center">THE LONG ROAD</h1>
+        <p className="text-orange-500/60 font-inter text-[10px] tracking-[0.5em] mb-12 uppercase">A Tale of Siddharth Solanki</p>
+        <button 
+          onClick={() => setIsStarted(true)}
+          className="px-12 py-4 border border-zinc-700 hover:border-orange-500 hover:text-orange-500 transition-all duration-700 font-cinzel tracking-[0.3em] text-sm group relative overflow-hidden"
+        >
+          <span className="relative z-10">START JOURNEY</span>
+          <div className="absolute inset-0 bg-orange-500/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+        </button>
+        <p className="mt-8 text-zinc-600 font-inter text-[10px] tracking-[0.2em] uppercase">Experience with Sound Recommended</p>
       </div>
-    </ThemeProvider>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className="film-grain bg-[#0a0a0c] min-h-screen">
+      <SEO />
+      <AudioPlayer />
+      <div className="fog-overlay" />
+      
+      <main className="relative">
+        <IntroScene />
+        <CharacterStory />
+        <Chronicles />
+        <ProductionGrounds />
+        <SkillsInventory />
+        <ProjectMissions />
+        <SymbolicCinematic />
+        <LastRide />
+        <CampfireFinal />
+      </main>
+
+      <footer className="h-24 flex flex-col items-center justify-center bg-black border-t border-zinc-900 text-zinc-600 font-inter text-[9px] tracking-[0.3em] uppercase relative z-50">
+        <p>© 2024 Siddharth Solanki • Ahmedabad</p>
+        <p className="mt-2 text-zinc-800">Built with Honor and Persistence</p>
+      </footer>
+    </div>
   );
-}
+};
 
 export default App;
