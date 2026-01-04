@@ -12,7 +12,7 @@ export const LastRide: React.FC = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top top",
-        end: "+=100%",
+        end: "+=80%", // Reduced from 100% to eliminate excessive scroll
         pin: true,
         scrub: 1,
       }
@@ -48,26 +48,26 @@ export const LastRide: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen bg-[#1a0f0a] overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-[#1a0f0a] overflow-hidden py-24">
       {/* Background gradients */}
       <div className="sunset-gradient absolute inset-0 bg-gradient-to-b from-orange-900/40 via-transparent to-transparent"></div>
       <div ref={overlayRef} className="absolute inset-0 bg-black/40 pointer-events-none transition-colors duration-1000"></div>
       
-      <div className="container mx-auto px-8 relative z-20 h-full flex items-center justify-center">
-        <div className="max-w-2xl text-center">
-          <div className="final-story-line absolute inset-0 flex items-center justify-center opacity-0 px-8">
+      <div className="container mx-auto px-8 relative z-20 min-h-screen flex items-center justify-center">
+        <div className="max-w-2xl text-center w-full">
+          <div className="final-story-line flex items-center justify-center opacity-0 px-8 py-16">
             <p className="text-2xl md:text-4xl italic text-zinc-100 font-serif leading-relaxed">
-              "I wasn’t perfect.<br/>But I built with honesty."
+              "I wasn't perfect.<br/>But I built with honesty."
             </p>
           </div>
 
-          <div className="final-story-line absolute inset-0 flex items-center justify-center opacity-0 px-8">
+          <div className="final-story-line flex items-center justify-center opacity-0 px-8 py-16">
             <p className="text-2xl md:text-4xl italic text-zinc-100 font-serif leading-relaxed">
               "Every line of code.<br/>Every design.<br/>Earned the right way."
             </p>
           </div>
 
-          <div className="final-story-line absolute inset-0 flex flex-col items-center justify-center opacity-0 px-8">
+          <div className="final-story-line flex flex-col items-center justify-center opacity-0 px-8 py-16">
             <h2 className="text-4xl md:text-7xl font-cinzel text-white uppercase tracking-[0.2em] mb-6">
               This is my last ride.
             </h2>

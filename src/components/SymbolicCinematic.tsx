@@ -12,7 +12,7 @@ export const SymbolicCinematic: React.FC = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%", // Reduced from 300% to keep transitions tighter
+          end: "+=120%", // Reduced significantly to minimize scroll time
           pin: true,
           scrub: 1,
           anticipatePin: 1,
@@ -38,8 +38,8 @@ export const SymbolicCinematic: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen bg-black flex items-center justify-center overflow-hidden relative border-y border-zinc-900/50">
-      <div className="z-10 w-full max-w-lg text-center px-8 relative h-64">
+    <section ref={sectionRef} className="min-h-screen bg-black flex items-center justify-center overflow-hidden relative border-y border-zinc-900/50 py-32">
+      <div className="z-10 w-full max-w-lg text-center px-8 relative">
         
         <div className="step-learning absolute inset-0 flex flex-col items-center justify-center opacity-0">
           <div className="icon mb-6 w-12 h-16 border-2 border-orange-500 rounded-sm relative shadow-[0_0_20px_rgba(255,77,0,0.2)]">
