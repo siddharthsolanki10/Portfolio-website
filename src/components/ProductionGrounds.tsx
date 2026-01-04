@@ -12,14 +12,23 @@ export const ProductionGrounds: React.FC = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%", // Reduced from 350%
+          end: "+=200%",
           pin: true,
           scrub: 1,
           anticipatePin: 1,
+          onRefresh: (self) => {
+            // Force recalculation of pin spacing
+            self.refresh();
+          }
         }
       });
 
       const lines = gsap.utils.toArray<HTMLElement>('.prod-line');
+      
+      // Initialize all lines to be invisible except when being animated
+      lines.forEach((line) => {
+        gsap.set(line, { opacity: 0 });
+      });
       
       lines.forEach((line, i) => {
         // Line Fade In and Up
@@ -46,24 +55,24 @@ export const ProductionGrounds: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen w-full bg-[#0a0a0c] flex items-center justify-center overflow-hidden border-y border-white/[0.02]">
-      <div ref={containerRef} className="relative w-full max-w-4xl px-8 text-center h-48 flex items-center justify-center">
+    <section ref={sectionRef} className="min-h-screen w-full bg-[#0a0a0c] flex items-center justify-center overflow-hidden border-y border-white/[0.02]">
+      <div ref={containerRef} className="relative w-full max-w-4xl px-8 text-center py-32 flex items-center justify-center">
         
-        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center opacity-0">
+        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center">
           <p className="text-orange-500 font-inter text-[10px] tracking-[0.6em] uppercase mb-6 opacity-60">Transition</p>
           <h2 className="text-2xl md:text-4xl italic text-zinc-100 font-serif leading-relaxed">
             "The tools were ready.<br/>But tools alone don't survive the frontier."
           </h2>
         </div>
 
-        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center opacity-0">
+        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center">
           <h2 className="text-2xl md:text-4xl italic text-zinc-100 font-serif leading-relaxed">
             I stepped away from the quiet of my own desk...<br/>
             ...and into the iron noise of <span className="text-white not-italic font-cinzel tracking-widest">DEVSTREE IT SERVICES</span>.
           </h2>
         </div>
 
-        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center opacity-0">
+        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center">
           <p className="text-zinc-500 font-inter text-[10px] tracking-[0.6em] uppercase mb-6">Backend Internship</p>
           <h2 className="text-2xl md:text-4xl italic text-zinc-100 font-serif leading-relaxed">
             APIs weren’t just endpoints anymore.<br/>
@@ -71,14 +80,14 @@ export const ProductionGrounds: React.FC = () => {
           </h2>
         </div>
 
-        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center opacity-0">
+        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center">
           <h2 className="text-2xl md:text-4xl italic text-zinc-100 font-serif leading-relaxed">
             Databases weren’t just tables.<br/>
             They were the collective trust of a user base.
           </h2>
         </div>
 
-        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center opacity-0">
+        <div className="prod-line absolute inset-0 flex flex-col items-center justify-center">
           <p className="text-orange-500 font-inter text-[10px] tracking-[0.6em] uppercase mb-6">The Lesson</p>
           <h2 className="text-3xl md:text-5xl font-cinzel text-white tracking-widest uppercase mb-8">
             DISCIPLINE.
