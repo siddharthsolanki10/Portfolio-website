@@ -4,22 +4,37 @@
   "name": "Siddharth Solanki",
   "url": "https://siddharthsolanki.vercel.app",
   "image": "https://media.licdn.com/dms/image/v2/D5603AQF1jIr6GDJ_Qw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724731498963?e=1756339200&v=beta&t=QbVMLv9Eoabrhdak4nWczIoyklnXPy941WZZYdm83ow",
-  "jobTitle": "Full-Stack Developer, UI/UX Designer, Content Creator",
+  "jobTitle": "Full-Stack Developer, Backend Developer Intern",
   "worksFor": {
     "@type": "Organization",
-    "name": "Freelance & Personal Projects"
+    "name": "DevsTree IT Services Pvt. Ltd."
   },
   "sameAs": [
     "https://github.com/mrsiddharthsolanki",
-    "https://www.linkedin.com/in/siddharth-solanki-225439325/",
+    "https://www.linkedin.com/in/mrsiddharthsolanki",
     "https://x.com/Sid4Art2141"
   ],
   "knowsAbout": [
-    "React", "Next.js", "Tailwind CSS", "Node.js", "JavaScript", "UI/UX", "Video Editing", "Graphic Design"
+    "Node.js",
+    "React.js",
+    "Tailwind CSS",
+    "NestJS",
+    "Express.js",
+    "REST APIs",
+    "MongoDB",
+    "SQL",
+    "Docker",
+    "AWS",
+    "TypeScript",
+    "JWT Authentication",
+    "RBAC/ABAC",
+    "Grafana",
+    "Redis",
+    "Backend Architecture"
   ],
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "Silver Oak University"
   },
-  "description": "Siddharth Solanki is a passionate full-stack developer, UI/UX designer, and video editor building responsive websites, apps, and digital experiences using modern tech."
+  "description": "Passionate Full-Stack Developer with a strong foundation in backend development, currently honing skills as a Backend Developer Intern at DevsTree IT Services Pvt. Ltd. Proficient in Node.js, React.js, and Tailwind CSS, with hands-on experience in building scalable applications using NestJS and Express.js. Skilled in designing REST APIs, managing databases with MongoDB and SQL, and deploying applications using Docker and AWS. Committed to continuous learning and staying updated with the latest technologies to deliver efficient and innovative solutions."
 }
