@@ -887,11 +887,15 @@ a:hover {
   border: 1px solid var(--hairline);
   padding: var(--sp-6);
   margin-bottom: var(--sp-6);
-  transition: border-color 200ms ease;
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease, box-shadow 250ms ease;
+  will-change: transform;
 }
 
 .case-study-section-card:hover {
-  border-color: rgba(236, 230, 218, 0.25);
+  border-color: rgba(230, 86, 79, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px -8px rgba(0, 0, 0, 0.55), 0 0 14px -6px rgba(230, 86, 79, 0.08);
 }
 
 .case-study-section-title {
@@ -981,6 +985,43 @@ a:hover {
   75%, 100% {
     transform: scale(2.6);
     opacity: 0;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   HERO 3D DEPTH SCENE & PARTICLES
+   ══════════════════════════════════════════════════ */
+.hero-3d-scene {
+  transform-style: preserve-3d;
+  contain: layout paint;
+  will-change: transform;
+}
+
+.hero-3d-bg-layer {
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-3d-moon-glow {
+  transform-origin: center center;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hero-mist-layer {
+  animation: mist-drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes mist-drift {
+  0% {
+    transform: translateX(-3%) scaleY(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(3%) scaleY(1.15);
+    opacity: 0.95;
   }
 }
 

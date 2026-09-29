@@ -46,29 +46,27 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
     };
     window.addEventListener('resize', handleResize);
 
-    // Warm embers, vermilion sparks, and golden Japanese firefly hues
+    // Warm embers and faint washi sparks — understated and minimal
     const colors = [
-      'rgba(255, 120, 80, ',   // vermilion ember
-      'rgba(255, 195, 120, ',  // golden lantern glow
-      'rgba(230, 86, 79, ',    // seal bright red
-      'rgba(255, 235, 195, ',  // warm washi spark
-      'rgba(240, 160, 90, ',   // amber flicker
+      'rgba(255, 140, 100, ',  // muted vermilion ember
+      'rgba(255, 210, 150, ',  // golden lantern glow
+      'rgba(245, 235, 220, ',  // warm washi spark
     ];
 
-    // Create 3D particles with varying depth layers
-    const particleCount = Math.min(42, Math.max(20, Math.floor(width / 30)));
+    // Minimal count of particles (delicate, not overwhelming)
+    const particleCount = Math.min(18, Math.max(10, Math.floor(width / 75)));
     const particles: Particle[] = Array.from({ length: particleCount }, () => {
-      const z = Math.random(); // 0 = distant background, 1 = immediate foreground
+      const z = Math.random(); // 0 = distant background, 1 = foreground
       const colorBase = colors[Math.floor(Math.random() * colors.length)];
       return {
         x: Math.random() * width,
         y: Math.random() * height,
         z,
-        size: 1 + z * 3.4,
-        baseAlpha: 0.2 + z * 0.65,
-        speedY: 0.25 + (1 - z) * 0.45,
-        speedX: (Math.random() - 0.5) * 0.28,
-        wobbleSpeed: 0.012 + Math.random() * 0.018,
+        size: 0.9 + z * 1.6,
+        baseAlpha: 0.12 + z * 0.28,
+        speedY: 0.16 + (1 - z) * 0.24,
+        speedX: (Math.random() - 0.5) * 0.14,
+        wobbleSpeed: 0.008 + Math.random() * 0.012,
         wobbleOffset: Math.random() * Math.PI * 2,
         color: colorBase,
       };
@@ -76,84 +74,79 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
 
     let time = 0;
 
-    // 60FPS Hardware-accelerated 3D Depth Loop
+    // Smooth, Minimal 60FPS Parallax Loop
     const render = () => {
-      time += 0.02;
+      time += 0.015;
 
-      // When user is not actively moving mouse, apply subtle organic 3D breathing drift
       let targetX = mousePos.current.x;
       let targetY = mousePos.current.y;
 
       if (!isInteracting.current) {
-        targetX += Math.sin(time * 0.5) * 0.12;
-        targetY += Math.cos(time * 0.4) * 0.08;
+        targetX += Math.sin(time * 0.4) * 0.06;
+        targetY += Math.cos(time * 0.3) * 0.04;
       }
 
-      // Smooth lerp for liquid, cinematic feel
-      const lerpFactor = 0.065;
+      // Smooth lerp for liquid, gentle feel
+      const lerpFactor = 0.055;
       currentPos.current.x += (targetX - currentPos.current.x) * lerpFactor;
       currentPos.current.y += (targetY - currentPos.current.y) * lerpFactor;
 
       const { x: curX, y: curY } = currentPos.current;
 
-      // 1. 3D Parallax & Perspective tilt on Background Image
+      // 1. Subtle, Minimal 3D Parallax & Perspective tilt (low angle: max 1.5 deg)
       if (bgImgRef.current) {
-        const tiltX = -curY * 5.5; // pitch
-        const tiltY = curX * 5.5;  // yaw
-        const transX = -curX * 26; // horizontal parallax
-        const transY = -curY * 18; // vertical parallax
-        bgImgRef.current.style.transform = `scale(1.09) perspective(1200px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translate3d(${transX.toFixed(1)}px, ${transY.toFixed(1)}px, 0)`;
+        const tiltX = -curY * 1.4; // subtle pitch
+        const tiltY = curX * 1.4;  // subtle yaw
+        const transX = -curX * 8;  // subtle horizontal shift
+        const transY = -curY * 6;  // subtle vertical shift
+        bgImgRef.current.style.transform = `scale(1.03) perspective(1400px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translate3d(${transX.toFixed(1)}px, ${transY.toFixed(1)}px, 0)`;
       }
 
-      // 2. Parallax on Volumetric Moon Halo (moon is centered around 50% X, 40% Y)
+      // 2. Gentle Parallax on Volumetric Moon Halo
       if (moonGlowRef.current) {
-        const moonParallaxX = curX * 35;
-        const moonParallaxY = curY * 24;
-        const moonPulse = 1 + Math.sin(time * 1.5) * 0.04;
+        const moonParallaxX = curX * 14;
+        const moonParallaxY = curY * 10;
+        const moonPulse = 1 + Math.sin(time * 1.2) * 0.025;
         moonGlowRef.current.style.transform = `translate(calc(-50% + ${moonParallaxX.toFixed(1)}px), calc(-50% + ${moonParallaxY.toFixed(1)}px)) scale(${moonPulse.toFixed(3)})`;
       }
 
-      // 3. Dynamic Cursor Spotlight
+      // 3. Minimal Ambient Cursor Sheen
       if (spotlightRef.current) {
         const spotX = ((curX + 1) * 50).toFixed(1);
         const spotY = ((curY + 1) * 50).toFixed(1);
-        spotlightRef.current.style.background = `radial-gradient(circle 650px at ${spotX}% ${spotY}%, rgba(255, 140, 90, 0.09) 0%, rgba(179, 21, 27, 0.03) 45%, transparent 70%)`;
+        spotlightRef.current.style.background = `radial-gradient(circle 600px at ${spotX}% ${spotY}%, rgba(255, 140, 90, 0.045) 0%, transparent 65%)`;
       }
 
-      // 4. Render 3D Canvas Particles with Z-layer Parallax
+      // 4. Render Minimal Canvas Particles
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        // Move particle upward with natural organic sway
         p.y -= p.speedY;
         p.wobbleOffset += p.wobbleSpeed;
-        p.x += Math.sin(p.wobbleOffset) * 0.38 + p.speedX;
+        p.x += Math.sin(p.wobbleOffset) * 0.22 + p.speedX;
 
-        // Wrap around boundaries
-        if (p.y < -20) {
+        if (p.y < -15) {
           p.y = height + 10;
           p.x = Math.random() * width;
         }
-        if (p.x < -20) p.x = width + 10;
-        if (p.x > width + 20) p.x = -10;
+        if (p.x < -15) p.x = width + 10;
+        if (p.x > width + 15) p.x = -10;
 
-        // 3D Parallax offset based on particle depth: foreground particles move significantly faster
-        const parallaxOffsetX = -curX * (p.z * 38);
-        const parallaxOffsetY = -curY * (p.z * 25);
+        // Subtle 3D depth shift
+        const parallaxOffsetX = -curX * (p.z * 16);
+        const parallaxOffsetY = -curY * (p.z * 10);
 
         const renderX = p.x + parallaxOffsetX;
         const renderY = p.y + parallaxOffsetY;
 
-        // Pulsing luminescence
-        const pulse = 0.72 + Math.sin(time * 2.4 + p.wobbleOffset) * 0.28;
+        const pulse = 0.8 + Math.sin(time * 2.0 + p.wobbleOffset) * 0.2;
         const currentAlpha = p.baseAlpha * pulse;
 
-        // Draw glowing ember
         ctx.beginPath();
         ctx.arc(renderX, renderY, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${currentAlpha.toFixed(3)})`;
-        ctx.shadowColor = p.color + '0.9)';
-        ctx.shadowBlur = p.size * (4 + p.z * 5.5);
+        ctx.shadowColor = p.color + '0.5)';
+        ctx.shadowBlur = p.size * (2 + p.z * 2.5);
         ctx.fill();
       });
 
@@ -162,7 +155,6 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
 
     rafId.current = requestAnimationFrame(render);
 
-    // Mouse movement listener
     const handleMouseMove = (e: MouseEvent) => {
       isInteracting.current = true;
       const rect = containerRef.current?.getBoundingClientRect();
@@ -180,7 +172,6 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
       mousePos.current = { x: 0, y: 0 };
     };
 
-    // Touch support for mobile 3D tilt
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 0) return;
       isInteracting.current = true;
@@ -231,17 +222,17 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        perspective: '1200px',
+        perspective: '1400px',
       }}
     >
-      {/* 1. Deep 3D Background Image Layer with Perspective Tilt */}
+      {/* 1. Deep 3D Background Image Layer with Subtle Perspective Tilt */}
       <div
         ref={bgImgRef}
         aria-hidden="true"
         className="hero-3d-bg-layer"
         style={{
           position: 'absolute',
-          inset: -32, // Bleed buffer to allow 3D parallax without exposing container edges
+          inset: -20,
           zIndex: 0,
           pointerEvents: 'none',
           willChange: 'transform',
@@ -260,7 +251,7 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
         />
       </div>
 
-      {/* 2. Volumetric Moon Halo Layer centered right behind the golden moon */}
+      {/* 2. Soft, Understated Volumetric Moon Halo */}
       <div
         ref={moonGlowRef}
         aria-hidden="true"
@@ -269,12 +260,12 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
           position: 'absolute',
           top: '40%',
           left: '50%',
-          width: '540px',
-          height: '540px',
-          maxWidth: '85vw',
-          maxHeight: '85vw',
+          width: '500px',
+          height: '500px',
+          maxWidth: '80vw',
+          maxHeight: '80vw',
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(255, 200, 110, 0.28) 0%, rgba(230, 86, 79, 0.16) 42%, rgba(179, 21, 27, 0.05) 65%, transparent 80%)',
+          background: 'radial-gradient(circle, rgba(255, 200, 110, 0.16) 0%, rgba(230, 86, 79, 0.08) 42%, transparent 70%)',
           filter: 'blur(45px)',
           pointerEvents: 'none',
           zIndex: 1,
@@ -282,38 +273,37 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
         }}
       />
 
-      {/* 3. Interactive Volumetric Cursor Torch / Spotlight */}
+      {/* 3. Subtle Ambient Cursor Light */}
       <div
         ref={spotlightRef}
         aria-hidden="true"
-        className="hero-3d-spotlight"
         style={{
           position: 'absolute',
           inset: 0,
           pointerEvents: 'none',
           zIndex: 1,
-          transition: 'background 120ms ease-out',
+          transition: 'background 140ms ease-out',
         }}
       />
 
-      {/* 4. Atmospheric Horizon Mist Layer at the Lake Base */}
+      {/* 4. Soft Horizon Mist Layer */}
       <div
         aria-hidden="true"
         className="hero-mist-layer"
         style={{
           position: 'absolute',
-          bottom: '12%',
+          bottom: '10%',
           left: 0,
           right: 0,
-          height: '180px',
-          background: 'linear-gradient(to top, rgba(179, 21, 27, 0.12) 0%, rgba(14, 12, 11, 0.2) 50%, transparent 100%)',
+          height: '140px',
+          background: 'linear-gradient(to top, rgba(179, 21, 27, 0.07) 0%, rgba(14, 12, 11, 0.15) 50%, transparent 100%)',
           filter: 'blur(20px)',
           pointerEvents: 'none',
           zIndex: 2,
         }}
       />
 
-      {/* 5. Editorial Japanese Gradient Veils — preserves 100% text readability while keeping artwork vibrant */}
+      {/* 5. Editorial Japanese Gradient Veils for Pristine Text Readability */}
       <div
         aria-hidden="true"
         style={{
@@ -338,7 +328,7 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
         }}
       />
 
-      {/* 6. Floating 3D Embers & Sparks Canvas */}
+      {/* 6. Minimal Floating Embers Canvas */}
       <canvas
         ref={canvasRef}
         aria-hidden="true"
@@ -352,7 +342,7 @@ export const Hero3DBackground: React.FC<Hero3DBackgroundProps> = ({ children }) 
         }}
       />
 
-      {/* 7. Foreground Content Plane (Sits cleanly on top of 3D depth) */}
+      {/* 7. Foreground Content Plane */}
       <div style={{ position: 'relative', zIndex: 10, width: '100%' }}>
         {children}
       </div>
