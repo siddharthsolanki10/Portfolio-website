@@ -1,20 +1,91 @@
-<svg width="202" height="201" viewBox="0 0 202 201" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M82.3181 166.854C69.6221 166.854 57.6861 161.911 48.7081 152.933C39.7301 143.955 34.7871 132.019 34.7871 119.324C34.7871 106.628 39.7311 94.6918 48.7091 85.7138L86.0751 48.3468C95.0531 39.3688 106.989 34.4258 119.685 34.4258C132.38 34.4258 144.317 39.3698 153.294 48.3468C171.825 66.8798 171.825 97.0338 153.294 115.567L115.928 152.933C106.95 161.911 95.0141 166.854 82.3181 166.854ZM119.685 44.9888C109.81 44.9888 100.526 48.8338 93.5441 55.8168L56.1781 93.1838C49.1961 100.166 45.3501 109.45 45.3501 119.325C45.3501 129.199 49.1951 138.483 56.1781 145.466C63.1601 152.448 72.4441 156.293 82.3191 156.293C92.1931 156.293 101.478 152.448 108.46 145.466L145.826 108.1C160.239 93.6858 160.239 70.2318 145.826 55.8178C138.843 48.8338 129.559 44.9888 119.685 44.9888Z" fill="url(#paint0_linear_288_59)"/>
-<path d="M119.684 166.854C106.988 166.854 95.0511 161.911 86.0741 152.933L48.7081 115.567C39.7301 106.59 34.7871 94.6528 34.7871 81.9568C34.7871 69.2608 39.7311 57.3248 48.7091 48.3478C57.6871 39.3698 69.6231 34.4268 82.3181 34.4268C95.0131 34.4268 106.95 39.3708 115.928 48.3478L153.294 85.7138C171.825 104.246 171.825 134.4 153.294 152.933C144.315 161.911 132.379 166.854 119.684 166.854ZM82.3171 44.9888C72.4431 44.9888 63.1591 48.8338 56.1761 55.8168C49.1941 62.7988 45.3481 72.0827 45.3481 81.9577C45.3481 91.8317 49.1931 101.117 56.1761 108.099L93.5421 145.465C100.524 152.447 109.809 156.292 119.684 156.292C129.558 156.292 138.842 152.447 145.825 145.465C160.238 131.051 160.238 107.597 145.825 93.1828L108.459 55.8168C101.476 48.8348 92.1911 44.9888 82.3171 44.9888Z" fill="url(#paint1_linear_288_59)"/>
-<path d="M101 200.984C45.6702 200.984 0.65625 155.97 0.65625 100.64C0.65625 97.7229 3.02024 95.3589 5.93724 95.3589C8.85424 95.3589 11.2182 97.7229 11.2182 100.64C11.2182 150.146 51.4942 190.421 100.999 190.421C150.505 190.421 190.78 150.146 190.78 100.64C190.78 51.1349 150.505 10.8589 100.999 10.8589C98.0822 10.8589 95.7182 8.49488 95.7182 5.57788C95.7182 2.66088 98.0822 0.296875 100.999 0.296875C156.329 0.296875 201.343 45.3109 201.343 100.641C201.344 155.971 156.33 200.984 101 200.984Z" fill="url(#paint2_linear_288_59)"/>
-<defs>
-<linearGradient id="paint0_linear_288_59" x1="34.7867" y1="100.64" x2="167.193" y2="100.64" gradientUnits="userSpaceOnUse">
-<stop stop-color="#C74DA4"/>
-<stop offset="1" stop-color="#8358C7"/>
-</linearGradient>
-<linearGradient id="paint1_linear_288_59" x1="34.7857" y1="100.64" x2="167.192" y2="100.64" gradientUnits="userSpaceOnUse">
-<stop stop-color="#E559BD"/>
-<stop offset="1" stop-color="#9765E5"/>
-</linearGradient>
-<linearGradient id="paint2_linear_288_59" x1="0.65655" y1="100.641" x2="201.344" y2="100.641" gradientUnits="userSpaceOnUse">
-<stop stop-color="#E559BD"/>
-<stop offset="0.495192" stop-color="#BE5FD1"/>
-<stop offset="1" stop-color="#9765E5"/>
-</linearGradient>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sealBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C7181F" />
+      <stop offset="45%" stop-color="#9E1217" />
+      <stop offset="100%" stop-color="#6E0B0E" />
+    </linearGradient>
+    <linearGradient id="sealBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA49E" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#800D11" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F5EFE6" />
+      <stop offset="100%" stop-color="#E2D7C5" />
+    </linearGradient>
+    <filter id="sealShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Hanko Rounded Lacquer Seal -->
+  <rect
+    x="8"
+    y="8"
+    width="104"
+    height="104"
+    rx="26"
+    fill="url(#sealBg)"
+    stroke="url(#sealBorder)"
+    stroke-width="1.8"
+    filter="url(#sealShadow)"
+  />
+
+  <!-- Subtle Inset Craft Line -->
+  <rect
+    x="14"
+    y="14"
+    width="92"
+    height="92"
+    rx="20"
+    fill="none"
+    stroke="#F5EFE6"
+    stroke-opacity="0.12"
+    stroke-width="1"
+  />
+
+  <!-- Katana S Monogram (Upper Blade & Loop) -->
+  <path
+    d="M 60 25
+       L 76 39
+       L 64 47
+       C 61 44 56 40 50 41
+       C 43 43 40 48 41 54
+       C 42 61 48 66 56 71
+       L 64 76
+       C 75 82 82 89 80 99
+       C 79 104 74 107 70 107
+       L 68 97
+       C 72 96 73 93 73 90
+       C 72 84 66 79 59 75
+       L 51 70
+       C 39 63 34 54 36 43
+       C 38 31 50 25 60 25 Z"
+    fill="url(#bladeGrad)"
+  />
+
+  <!-- Katana S Monogram (Lower Blade & Counter Balance) -->
+  <path
+    d="M 60 95
+       L 44 81
+       L 56 73
+       C 59 76 64 80 70 79
+       C 77 77 80 72 79 66
+       C 78 59 72 54 64 49
+       L 56 44
+       C 45 38 38 31 40 21
+       C 41 16 46 13 50 13
+       L 52 23
+       C 48 24 47 27 47 30
+       C 48 36 54 41 61 45
+       L 69 50
+       C 81 57 86 66 84 77
+       C 82 89 70 95 60 95 Z"
+    fill="url(#bladeGrad)"
+    opacity="0.95"
+  />
+
+  <!-- Center Energy Core Notch -->
+  <polygon points="56,58 64,54 64,62 56,66" fill="#730B0F" opacity="0.65" />
 </svg>

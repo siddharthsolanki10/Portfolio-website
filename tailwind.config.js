@@ -6,14 +6,23 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        cinzel: ['Cinzel', 'serif'],
-        serif: ['Merriweather', 'serif'],
+      colors: {
+        ink: {
+          DEFAULT: '#121110',
+          2: '#1b1917',
+        },
+        washi: {
+          DEFAULT: '#ece6da',
+          dim: '#948c7e',
+        },
+        seal: {
+          DEFAULT: '#b3151b',
+          bright: '#e6564f',
+        },
       },
-      animation: {
-        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce': 'bounce 1s infinite',
+      fontFamily: {
+        serif: ['"Playfair Display"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },

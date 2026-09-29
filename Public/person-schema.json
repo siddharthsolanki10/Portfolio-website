@@ -9,10 +9,17 @@
     "@type": "Organization",
     "name": "DevsTree IT Services Pvt. Ltd."
   },
+  "email": "solankisiddharth059@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ahmedabad",
+    "addressRegion": "Gujarat",
+    "addressCountry": "India"
+  },
   "sameAs": [
-    "https://github.com/mrsiddharthsolanki",
-    "https://www.linkedin.com/in/mrsiddharthsolanki",
-    "https://x.com/Sid4Art2141"
+    "https://github.com/siddharthsolanki10",
+    "https://www.linkedin.com/in/siddharthsolanki10/",
+    "https://siddharthsolanki.vercel.app/"
   ],
   "knowsAbout": [
     "Node.js",
