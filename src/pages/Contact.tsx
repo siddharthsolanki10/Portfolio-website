@@ -175,7 +175,7 @@ export const Contact: React.FC = () => {
                 </span>
               </div>
               <a
-                href="/Public/SiddharthSolanki-Resume.pdf"
+                href="https://drive.google.com/file/d/1Vzl2JS4MK70O-PruAtDu6qurf4qgRKiV/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn"

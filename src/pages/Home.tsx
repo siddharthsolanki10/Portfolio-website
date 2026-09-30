@@ -372,7 +372,7 @@ export const Home: React.FC = () => {
             <Link to="/contact" className="btn btn-hero-primary" style={{ padding: 'var(--sp-3) var(--sp-6)' }}>
               Get in touch →
             </Link>
-            <a href="/Public/SiddharthSolanki-Resume.pdf" className="btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1Vzl2JS4MK70O-PruAtDu6qurf4qgRKiV/view?usp=sharing" className="btn" target="_blank" rel="noopener noreferrer">
               Download resume (PDF)
             </a>
           </div>

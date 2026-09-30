@@ -330,7 +330,7 @@ export const Footer: React.FC = () => {
             <ColLabel>utility</ColLabel>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '2px' }}>
               <li>
-                <FLink href="/Public/SiddharthSolanki-Resume.pdf" external>Resume (PDF)</FLink>
+                <FLink href="https://drive.google.com/file/d/1Vzl2JS4MK70O-PruAtDu6qurf4qgRKiV/view?usp=sharing" external>Resume (PDF)</FLink>
               </li>
               <li>
                 <FLink to="/contact">Direct Message</FLink>
