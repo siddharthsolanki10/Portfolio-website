@@ -1,7 +1,6 @@
-# Disallow entire site (not recommended unless it's private)
+# Allow all search engines to crawl the entire site
 User-agent: *
-Disallow: /
+Allow: /
 
-# OR to disallow only index.html (not usually needed)
-User-agent: *
-Disallow: /index.html
+# Sitemap location
+Sitemap: https://siddharthsolanki.vercel.app/sitemap.xml
